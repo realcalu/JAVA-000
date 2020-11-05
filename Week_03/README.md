@@ -6,6 +6,6 @@ HttpRequestFilterImpl完成了第三个作业
 
 HttpEndpointRouterImpl完成了第四个作业
 
-![Image text](https://github.com/realcalu/JAVA-000/blob/main/Week_03/img/WX20201105-104400%402x.png)
+![Image text](https://raw.githubusercontent.com/realcalu/JAVA-000/main/Week_03/img/WX20201105-104400%402x.png)
 
 通过启动的时候添加多个后端http地址，可以随机访问做负载均衡
