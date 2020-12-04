@@ -1,0 +1,577 @@
+[ INFO ] [2020-12-04 10:38:55] com.warm.DynamicDatasourceApplication [48] - Starting DynamicDatasourceApplication on calu-3.local with PID 78723 (/Users/apple/calu/work/58city/demo/target/classes started by apple in /Users/apple/calu/work/58city/demo)
+[ DEBUG] [2020-12-04 10:38:55] com.warm.DynamicDatasourceApplication [51] - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+[ INFO ] [2020-12-04 10:38:55] com.warm.DynamicDatasourceApplication [597] - The following profiles are active: dev
+[ INFO ] [2020-12-04 10:38:55] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext [583] - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4135c3b: startup date [Fri Dec 04 10:38:55 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:38:57] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [89] - Tomcat initialized with port(s): 8080 (http)
+[ INFO ] [2020-12-04 10:38:57] org.springframework.web.context.ContextLoader [276] - Root WebApplicationContext: initialization completed in 1578 ms
+[ INFO ] [2020-12-04 10:38:57] org.springframework.boot.web.servlet.ServletRegistrationBean [190] - Mapping servlet: 'dispatcherServlet' to [/]
+[ INFO ] [2020-12-04 10:38:57] org.springframework.boot.web.servlet.ServletRegistrationBean [190] - Mapping servlet: 'statViewServlet' to [/druid/*]
+[ INFO ] [2020-12-04 10:38:57] org.springframework.boot.web.servlet.FilterRegistrationBean [258] - Mapping filter: 'characterEncodingFilter' to: [/*]
+[ INFO ] [2020-12-04 10:38:57] org.springframework.boot.web.servlet.FilterRegistrationBean [258] - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[ INFO ] [2020-12-04 10:38:57] org.springframework.boot.web.servlet.FilterRegistrationBean [258] - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[ INFO ] [2020-12-04 10:38:57] org.springframework.boot.web.servlet.FilterRegistrationBean [258] - Mapping filter: 'requestContextFilter' to: [/*]
+[ INFO ] [2020-12-04 10:38:57] org.springframework.boot.web.servlet.FilterRegistrationBean [271] - Mapping filter: 'webStatFilter' to urls: [/*]
+[ ERROR] [2020-12-04 10:39:02] com.alibaba.druid.pool.DruidDataSource [833] - init datasource error, url: jdbc:mysql://localhost:3306/db1?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:919)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:898)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:887)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:861)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2094)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2019)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:776)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:149)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:217)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:143)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1466)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1529)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:822)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1172)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1168)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:104)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.getConnection(AbstractRoutingDataSource.java:164)
+	at com.baomidou.mybatisplus.toolkit.GlobalConfigUtils.setMetaData(GlobalConfigUtils.java:187)
+	at com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:560)
+	at com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:385)
+	at com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:608)
+	at com.warm.config.mybatis.MybatisPlusConfig.sqlSessionFactory(MybatisPlusConfig.java:97)
+	at com.warm.config.mybatis.MybatisPlusConfig$$EnhancerBySpringCGLIB$$e8ba2c7d.CGLIB$sqlSessionFactory$4(<generated>)
+	at com.warm.config.mybatis.MybatisPlusConfig$$EnhancerBySpringCGLIB$$e8ba2c7d$$FastClassBySpringCGLIB$$c6ae8cc5.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at com.warm.config.mybatis.MybatisPlusConfig$$EnhancerBySpringCGLIB$$e8ba2c7d.sqlSessionFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1342)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1249)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.warm.DynamicDatasourceApplication.main(DynamicDatasourceApplication.java:10)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'db1'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:873)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1710)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1226)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2188)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2035)
+	... 91 common frames omitted
+[ ERROR] [2020-12-04 10:39:02] com.alibaba.druid.pool.DruidDataSource [864] - {dataSource-1} init error
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:919)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:898)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:887)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:861)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2094)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2019)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:776)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:149)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:217)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:143)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1466)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1529)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:822)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1172)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1168)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:104)
+	at org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource.getConnection(AbstractRoutingDataSource.java:164)
+	at com.baomidou.mybatisplus.toolkit.GlobalConfigUtils.setMetaData(GlobalConfigUtils.java:187)
+	at com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:560)
+	at com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:385)
+	at com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:608)
+	at com.warm.config.mybatis.MybatisPlusConfig.sqlSessionFactory(MybatisPlusConfig.java:97)
+	at com.warm.config.mybatis.MybatisPlusConfig$$EnhancerBySpringCGLIB$$e8ba2c7d.CGLIB$sqlSessionFactory$4(<generated>)
+	at com.warm.config.mybatis.MybatisPlusConfig$$EnhancerBySpringCGLIB$$e8ba2c7d$$FastClassBySpringCGLIB$$c6ae8cc5.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at com.warm.config.mybatis.MybatisPlusConfig$$EnhancerBySpringCGLIB$$e8ba2c7d.sqlSessionFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1342)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1249)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.warm.DynamicDatasourceApplication.main(DynamicDatasourceApplication.java:10)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown database 'db1'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:944)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:873)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1710)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1226)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2188)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2035)
+	... 91 common frames omitted
+[ WARN ] [2020-12-04 10:39:02] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext [551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'indexController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [/Users/apple/calu/work/58city/demo/target/classes/com/warm/system/mapper/UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/warm/config/mybatis/MybatisPlusConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is com.baomidou.mybatisplus.exceptions.MybatisPlusException: Error: GlobalConfigUtils setMetaData Fail !  Cause:com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+[ INFO ] [2020-12-04 10:39:02] org.springframework.boot.autoconfigure.logging.AutoConfigurationReportLoggingInitializer [101] - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+[ ERROR] [2020-12-04 10:39:02] org.springframework.boot.SpringApplication [771] - Application startup failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'indexController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [/Users/apple/calu/work/58city/demo/target/classes/com/warm/system/mapper/UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/warm/config/mybatis/MybatisPlusConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is com.baomidou.mybatisplus.exceptions.MybatisPlusException: Error: GlobalConfigUtils setMetaData Fail !  Cause:com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.warm.DynamicDatasourceApplication.main(DynamicDatasourceApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [/Users/apple/calu/work/58city/demo/target/classes/com/warm/system/mapper/UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/warm/config/mybatis/MybatisPlusConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is com.baomidou.mybatisplus.exceptions.MybatisPlusException: Error: GlobalConfigUtils setMetaData Fail !  Cause:com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [/Users/apple/calu/work/58city/demo/target/classes/com/warm/system/mapper/UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/warm/config/mybatis/MybatisPlusConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is com.baomidou.mybatisplus.exceptions.MybatisPlusException: Error: GlobalConfigUtils setMetaData Fail !  Cause:com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1357)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1249)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 32 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/warm/config/mybatis/MybatisPlusConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is com.baomidou.mybatisplus.exceptions.MybatisPlusException: Error: GlobalConfigUtils setMetaData Fail !  Cause:com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1342)
+	... 43 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is com.baomidou.mybatisplus.exceptions.MybatisPlusException: Error: GlobalConfigUtils setMetaData Fail !  Cause:com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 55 common frames omitted
+Caused by: com.baomidou.mybatisplus.exceptions.MybatisPlusException: Error: GlobalConfigUtils setMetaData Fail !  Cause:com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.baomidou.mybatisplus.toolkit.GlobalConfigUtils.setMetaData(GlobalConfigUtils.java:196)
+	at com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:560)
+	at com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:385)
+	at com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:608)
+	at com.warm.config.mybatis.MybatisPlusConfig.sqlSessionFactory(MybatisPlusConfig.java:97)
+	at com.warm.config.mybatis.MybatisPlusConfig$$EnhancerBySpringCGLIB$$e8ba2c7d.CGLIB$sqlSessionFactory$4(<generated>)
+	at com.warm.config.mybatis.MybatisPlusConfig$$EnhancerBySpringCGLIB$$e8ba2c7d$$FastClassBySpringCGLIB$$c6ae8cc5.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at com.warm.config.mybatis.MybatisPlusConfig$$EnhancerBySpringCGLIB$$e8ba2c7d.sqlSessionFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 56 common frames omitted
+[ INFO ] [2020-12-04 10:39:34] com.warm.DynamicDatasourceApplication [48] - Starting DynamicDatasourceApplication on calu-3.local with PID 78814 (/Users/apple/calu/work/58city/demo/target/classes started by apple in /Users/apple/calu/work/58city/demo)
+[ DEBUG] [2020-12-04 10:39:34] com.warm.DynamicDatasourceApplication [51] - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+[ INFO ] [2020-12-04 10:39:34] com.warm.DynamicDatasourceApplication [597] - The following profiles are active: dev
+[ INFO ] [2020-12-04 10:39:34] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext [583] - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@eda25e5: startup date [Fri Dec 04 10:39:34 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:39:37] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [89] - Tomcat initialized with port(s): 8080 (http)
+[ INFO ] [2020-12-04 10:39:38] org.springframework.web.context.ContextLoader [276] - Root WebApplicationContext: initialization completed in 3135 ms
+[ INFO ] [2020-12-04 10:39:38] org.springframework.boot.web.servlet.ServletRegistrationBean [190] - Mapping servlet: 'dispatcherServlet' to [/]
+[ INFO ] [2020-12-04 10:39:38] org.springframework.boot.web.servlet.ServletRegistrationBean [190] - Mapping servlet: 'statViewServlet' to [/druid/*]
+[ INFO ] [2020-12-04 10:39:38] org.springframework.boot.web.servlet.FilterRegistrationBean [258] - Mapping filter: 'characterEncodingFilter' to: [/*]
+[ INFO ] [2020-12-04 10:39:38] org.springframework.boot.web.servlet.FilterRegistrationBean [258] - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[ INFO ] [2020-12-04 10:39:38] org.springframework.boot.web.servlet.FilterRegistrationBean [258] - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[ INFO ] [2020-12-04 10:39:38] org.springframework.boot.web.servlet.FilterRegistrationBean [258] - Mapping filter: 'requestContextFilter' to: [/*]
+[ INFO ] [2020-12-04 10:39:38] org.springframework.boot.web.servlet.FilterRegistrationBean [271] - Mapping filter: 'webStatFilter' to urls: [/*]
+[ INFO ] [2020-12-04 10:39:42] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [534] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@eda25e5: startup date [Fri Dec 04 10:39:34 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:39:42] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice()
+[ INFO ] [2020-12-04 10:39:42] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/user],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.User>> com.warm.system.controller.IndexController.getUserList()
+[ INFO ] [2020-12-04 10:39:42] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/order],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.Order>> com.warm.system.controller.IndexController.getOrderList()
+[ INFO ] [2020-12-04 10:39:42] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price2],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice2()
+[ INFO ] [2020-12-04 10:39:42] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[ INFO ] [2020-12-04 10:39:42] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[ INFO ] [2020-12-04 10:39:42] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:39:42] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:39:42] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:39:43] org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [201] - Tomcat started on port(s): 8080 (http)
+[ INFO ] [2020-12-04 10:39:43] com.warm.DynamicDatasourceApplication [57] - Started DynamicDatasourceApplication in 10.322 seconds (JVM running for 11.276)
+[ INFO ] [2020-12-04 10:40:12] org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext [984] - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@eda25e5: startup date [Fri Dec 04 10:39:34 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:41:35] com.warm.entity.DataTest [48] - Starting DataTest on calu-3.local with PID 79077 (started by apple in /Users/apple/calu/work/58city/demo)
+[ DEBUG] [2020-12-04 10:41:35] com.warm.entity.DataTest [51] - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+[ INFO ] [2020-12-04 10:41:35] com.warm.entity.DataTest [597] - The following profiles are active: dev
+[ INFO ] [2020-12-04 10:41:35] org.springframework.web.context.support.GenericWebApplicationContext [583] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:41:35 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:41:45] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:41:35 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:41:45] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/user],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.User>> com.warm.system.controller.IndexController.getUserList()
+[ INFO ] [2020-12-04 10:41:45] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/order],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.Order>> com.warm.system.controller.IndexController.getOrderList()
+[ INFO ] [2020-12-04 10:41:45] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price2],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice2()
+[ INFO ] [2020-12-04 10:41:45] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice()
+[ INFO ] [2020-12-04 10:41:45] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[ INFO ] [2020-12-04 10:41:45] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[ INFO ] [2020-12-04 10:41:46] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:41:46] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:41:46] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:41:47] com.warm.entity.DataTest [57] - Started DataTest in 13.321 seconds (JVM running for 15.012)
+[ INFO ] [2020-12-04 10:41:47] com.warm.common.DataSourceSwitchAspect [35] - 切换到db1 数据源...
+[ DEBUG] [2020-12-04 10:41:48] com.warm.system.mapper.UserMapper.selectList [159] - ==>  Preparing: SELECT uid AS `uid`,username,`password`,email,phone,modify_time AS createtime,modify_time AS updatetime FROM userlogin 
+[ DEBUG] [2020-12-04 10:41:48] com.warm.system.mapper.UserMapper.selectList [159] - ==> Parameters: 
+[ INFO ] [2020-12-04 10:41:48] org.springframework.web.context.support.GenericWebApplicationContext [984] - Closing org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:41:35 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:42:21] com.warm.entity.DataTest [48] - Starting DataTest on calu-3.local with PID 79156 (started by apple in /Users/apple/calu/work/58city/demo)
+[ DEBUG] [2020-12-04 10:42:21] com.warm.entity.DataTest [51] - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+[ INFO ] [2020-12-04 10:42:21] com.warm.entity.DataTest [597] - The following profiles are active: dev
+[ INFO ] [2020-12-04 10:42:21] org.springframework.web.context.support.GenericWebApplicationContext [583] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:42:21 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:42:31] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:42:21 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:42:31] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/user],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.User>> com.warm.system.controller.IndexController.getUserList()
+[ INFO ] [2020-12-04 10:42:31] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/order],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.Order>> com.warm.system.controller.IndexController.getOrderList()
+[ INFO ] [2020-12-04 10:42:31] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice()
+[ INFO ] [2020-12-04 10:42:31] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price2],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice2()
+[ INFO ] [2020-12-04 10:42:31] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[ INFO ] [2020-12-04 10:42:31] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[ INFO ] [2020-12-04 10:42:31] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:42:31] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:42:31] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:42:32] com.warm.entity.DataTest [57] - Started DataTest in 13.206 seconds (JVM running for 15.207)
+[ INFO ] [2020-12-04 10:42:32] com.warm.common.DataSourceSwitchAspect [35] - 切换到db1 数据源...
+[ DEBUG] [2020-12-04 10:42:33] com.warm.system.mapper.UserMapper.selectList [159] - ==>  Preparing: SELECT uid AS `uid`,username,`password`,email,phone,createtime,updatetime FROM userlogin 
+[ DEBUG] [2020-12-04 10:42:33] com.warm.system.mapper.UserMapper.selectList [159] - ==> Parameters: 
+[ INFO ] [2020-12-04 10:42:33] org.springframework.web.context.support.GenericWebApplicationContext [984] - Closing org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:42:21 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:43:24] com.warm.entity.DataTest [48] - Starting DataTest on calu-3.local with PID 79283 (started by apple in /Users/apple/calu/work/58city/demo)
+[ DEBUG] [2020-12-04 10:43:24] com.warm.entity.DataTest [51] - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+[ INFO ] [2020-12-04 10:43:24] com.warm.entity.DataTest [597] - The following profiles are active: dev
+[ INFO ] [2020-12-04 10:43:24] org.springframework.web.context.support.GenericWebApplicationContext [583] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:43:24 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:43:30] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:43:24 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:43:30] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/user],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.User>> com.warm.system.controller.IndexController.getUserList()
+[ INFO ] [2020-12-04 10:43:30] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/order],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.Order>> com.warm.system.controller.IndexController.getOrderList()
+[ INFO ] [2020-12-04 10:43:30] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice()
+[ INFO ] [2020-12-04 10:43:30] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price2],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice2()
+[ INFO ] [2020-12-04 10:43:30] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[ INFO ] [2020-12-04 10:43:30] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[ INFO ] [2020-12-04 10:43:30] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:43:30] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:43:30] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:43:32] com.warm.entity.DataTest [57] - Started DataTest in 9.804 seconds (JVM running for 11.389)
+[ INFO ] [2020-12-04 10:43:32] com.warm.common.DataSourceSwitchAspect [35] - 切换到db1 数据源...
+[ DEBUG] [2020-12-04 10:43:32] com.warm.system.mapper.UserMapper.selectList [159] - ==>  Preparing: SELECT uid AS `uid`,username,`password`,email,phone,createtime,updatetime FROM userlogin 
+[ DEBUG] [2020-12-04 10:43:33] com.warm.system.mapper.UserMapper.selectList [159] - ==> Parameters: 
+[ DEBUG] [2020-12-04 10:43:33] com.warm.system.mapper.UserMapper.selectList [159] - <==      Total: 0
+[ INFO ] [2020-12-04 10:45:34] com.warm.common.DataSourceSwitchAspect [41] - 切换到db2 数据源...
+[ DEBUG] [2020-12-04 10:45:34] com.warm.system.mapper.OrderMapper.selectList [159] - ==>  Preparing: SELECT id AS id,sellerid,buyerid,snapshotid,`state`,createtime,updatetime AS modupdatetimeifyTime FROM order 
+[ DEBUG] [2020-12-04 10:45:34] com.warm.system.mapper.OrderMapper.selectList [159] - ==> Parameters: 
+[ INFO ] [2020-12-04 10:45:34] org.springframework.web.context.support.GenericWebApplicationContext [984] - Closing org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:43:24 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:45:43] com.warm.entity.DataTest [48] - Starting DataTest on calu-3.local with PID 79578 (started by apple in /Users/apple/calu/work/58city/demo)
+[ DEBUG] [2020-12-04 10:45:43] com.warm.entity.DataTest [51] - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+[ INFO ] [2020-12-04 10:45:43] com.warm.entity.DataTest [597] - The following profiles are active: dev
+[ INFO ] [2020-12-04 10:45:44] org.springframework.web.context.support.GenericWebApplicationContext [583] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:45:44 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:45:49] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:45:44 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:45:49] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice()
+[ INFO ] [2020-12-04 10:45:49] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price2],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice2()
+[ INFO ] [2020-12-04 10:45:49] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/user],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.User>> com.warm.system.controller.IndexController.getUserList()
+[ INFO ] [2020-12-04 10:45:49] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/order],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.Order>> com.warm.system.controller.IndexController.getOrderList()
+[ INFO ] [2020-12-04 10:45:49] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[ INFO ] [2020-12-04 10:45:49] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[ INFO ] [2020-12-04 10:45:49] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:45:49] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:45:49] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:45:50] com.warm.entity.DataTest [57] - Started DataTest in 7.587 seconds (JVM running for 9.354)
+[ INFO ] [2020-12-04 10:45:50] com.warm.common.DataSourceSwitchAspect [35] - 切换到db1 数据源...
+[ DEBUG] [2020-12-04 10:45:50] com.warm.system.mapper.UserMapper.selectList [159] - ==>  Preparing: SELECT uid AS `uid`,username,`password`,email,phone,createtime,updatetime FROM userlogin 
+[ DEBUG] [2020-12-04 10:45:50] com.warm.system.mapper.UserMapper.selectList [159] - ==> Parameters: 
+[ DEBUG] [2020-12-04 10:45:50] com.warm.system.mapper.UserMapper.selectList [159] - <==      Total: 0
+[ INFO ] [2020-12-04 10:46:36] com.warm.common.DataSourceSwitchAspect [41] - 切换到db2 数据源...
+[ DEBUG] [2020-12-04 10:46:36] com.warm.system.mapper.OrderMapper.selectList [159] - ==>  Preparing: SELECT id AS id,sellerid,buyerid,snapshotid,`state`,createtime,updatetime AS modupdatetimeifyTime FROM order 
+[ DEBUG] [2020-12-04 10:46:36] com.warm.system.mapper.OrderMapper.selectList [159] - ==> Parameters: 
+[ INFO ] [2020-12-04 10:46:36] org.springframework.web.context.support.GenericWebApplicationContext [984] - Closing org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:45:44 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:46:46] com.warm.entity.DataTest [48] - Starting DataTest on calu-3.local with PID 79741 (started by apple in /Users/apple/calu/work/58city/demo)
+[ DEBUG] [2020-12-04 10:46:46] com.warm.entity.DataTest [51] - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+[ INFO ] [2020-12-04 10:46:46] com.warm.entity.DataTest [597] - The following profiles are active: dev
+[ INFO ] [2020-12-04 10:46:46] org.springframework.web.context.support.GenericWebApplicationContext [583] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:46:46 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:46:58] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:46:46 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:46:58] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice()
+[ INFO ] [2020-12-04 10:46:58] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price2],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice2()
+[ INFO ] [2020-12-04 10:46:58] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/user],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.User>> com.warm.system.controller.IndexController.getUserList()
+[ INFO ] [2020-12-04 10:46:58] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/order],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.Order>> com.warm.system.controller.IndexController.getOrderList()
+[ INFO ] [2020-12-04 10:46:58] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[ INFO ] [2020-12-04 10:46:58] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[ INFO ] [2020-12-04 10:46:58] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:46:58] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:46:58] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:47:00] com.warm.entity.DataTest [57] - Started DataTest in 15.879 seconds (JVM running for 18.009)
+[ INFO ] [2020-12-04 10:47:00] com.warm.common.DataSourceSwitchAspect [35] - 切换到db1 数据源...
+[ DEBUG] [2020-12-04 10:47:00] com.warm.system.mapper.UserMapper.selectList [159] - ==>  Preparing: SELECT uid AS `uid`,username,`password`,email,phone,createtime,updatetime FROM userlogin 
+[ DEBUG] [2020-12-04 10:47:01] com.warm.system.mapper.UserMapper.selectList [159] - ==> Parameters: 
+[ DEBUG] [2020-12-04 10:47:01] com.warm.system.mapper.UserMapper.selectList [159] - <==      Total: 1
+[ INFO ] [2020-12-04 10:48:08] com.warm.common.DataSourceSwitchAspect [41] - 切换到db2 数据源...
+[ DEBUG] [2020-12-04 10:48:08] com.warm.system.mapper.OrderMapper.selectList [159] - ==>  Preparing: SELECT id AS id,sellerid,buyerid,snapshotid,`state`,createtime,updatetime AS modupdatetimeifyTime FROM order 
+[ DEBUG] [2020-12-04 10:48:08] com.warm.system.mapper.OrderMapper.selectList [159] - ==> Parameters: 
+[ INFO ] [2020-12-04 10:48:08] org.springframework.web.context.support.GenericWebApplicationContext [984] - Closing org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:46:46 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:48:19] com.warm.entity.DataTest [48] - Starting DataTest on calu-3.local with PID 79947 (started by apple in /Users/apple/calu/work/58city/demo)
+[ DEBUG] [2020-12-04 10:48:19] com.warm.entity.DataTest [51] - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+[ INFO ] [2020-12-04 10:48:19] com.warm.entity.DataTest [597] - The following profiles are active: dev
+[ INFO ] [2020-12-04 10:48:19] org.springframework.web.context.support.GenericWebApplicationContext [583] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:48:19 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:48:31] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:48:19 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:48:31] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice()
+[ INFO ] [2020-12-04 10:48:31] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price2],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice2()
+[ INFO ] [2020-12-04 10:48:31] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/user],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.User>> com.warm.system.controller.IndexController.getUserList()
+[ INFO ] [2020-12-04 10:48:31] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/order],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.Order>> com.warm.system.controller.IndexController.getOrderList()
+[ INFO ] [2020-12-04 10:48:31] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[ INFO ] [2020-12-04 10:48:31] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[ INFO ] [2020-12-04 10:48:32] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:48:32] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:48:32] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:48:34] com.warm.entity.DataTest [57] - Started DataTest in 16.192 seconds (JVM running for 18.548)
+[ INFO ] [2020-12-04 10:48:34] com.warm.common.DataSourceSwitchAspect [35] - 切换到db1 数据源...
+[ INFO ] [2020-12-04 10:48:34] com.warm.common.DataSourceSwitchAspect [56] - 根据注解来切换数据源,注解值为:db2
+[ DEBUG] [2020-12-04 10:48:34] com.warm.system.mapper.UserMapper.selectList [159] - ==>  Preparing: SELECT uid AS `uid`,username,`password`,email,phone,createtime,updatetime FROM userlogin 
+[ DEBUG] [2020-12-04 10:48:34] com.warm.system.mapper.UserMapper.selectList [159] - ==> Parameters: 
+[ DEBUG] [2020-12-04 10:48:34] com.warm.system.mapper.UserMapper.selectList [159] - <==      Total: 1
+[ INFO ] [2020-12-04 10:49:06] com.warm.common.DataSourceSwitchAspect [41] - 切换到db2 数据源...
+[ INFO ] [2020-12-04 10:49:06] com.warm.common.DataSourceSwitchAspect [56] - 根据注解来切换数据源,注解值为:db1
+[ DEBUG] [2020-12-04 10:49:06] com.warm.system.mapper.OrderMapper.selectList [159] - ==>  Preparing: SELECT id AS id,sellerid,buyerid,snapshotid,`state`,createtime,updatetime AS modupdatetimeifyTime FROM order 
+[ DEBUG] [2020-12-04 10:49:06] com.warm.system.mapper.OrderMapper.selectList [159] - ==> Parameters: 
+[ INFO ] [2020-12-04 10:49:06] org.springframework.web.context.support.GenericWebApplicationContext [984] - Closing org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 10:48:19 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:53:01] com.warm.entity.DataTest [48] - Starting DataTest on calu-3.local with PID 80596 (started by apple in /Users/apple/calu/work/58city/demo)
+[ DEBUG] [2020-12-04 10:53:01] com.warm.entity.DataTest [51] - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+[ INFO ] [2020-12-04 10:53:01] com.warm.entity.DataTest [597] - The following profiles are active: dev
+[ INFO ] [2020-12-04 10:53:01] org.springframework.web.context.support.GenericWebApplicationContext [583] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@16150369: startup date [Fri Dec 04 10:53:01 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:53:06] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@16150369: startup date [Fri Dec 04 10:53:01 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 10:53:06] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/user],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.User>> com.warm.system.controller.IndexController.getUserList()
+[ INFO ] [2020-12-04 10:53:06] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/order],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.Order>> com.warm.system.controller.IndexController.getOrderList()
+[ INFO ] [2020-12-04 10:53:06] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice()
+[ INFO ] [2020-12-04 10:53:06] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price2],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice2()
+[ INFO ] [2020-12-04 10:53:06] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[ INFO ] [2020-12-04 10:53:06] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[ INFO ] [2020-12-04 10:53:06] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:53:06] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:53:07] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 10:53:07] com.warm.entity.DataTest [57] - Started DataTest in 6.326 seconds (JVM running for 7.032)
+[ INFO ] [2020-12-04 10:53:07] com.warm.common.DataSourceSwitchAspect [35] - 切换到db1 数据源...
+[ INFO ] [2020-12-04 10:53:07] com.warm.common.DataSourceSwitchAspect [56] - 根据注解来切换数据源,注解值为:db2
+[ DEBUG] [2020-12-04 10:53:07] com.warm.system.mapper.UserMapper.selectList [159] - ==>  Preparing: SELECT uid AS `uid`,username,`password`,email,phone,createtime,updatetime FROM userlogin 
+[ DEBUG] [2020-12-04 10:53:07] com.warm.system.mapper.UserMapper.selectList [159] - ==> Parameters: 
+[ DEBUG] [2020-12-04 10:53:07] com.warm.system.mapper.UserMapper.selectList [159] - <==      Total: 1
+[ INFO ] [2020-12-04 10:53:07] com.warm.common.DataSourceSwitchAspect [41] - 切换到db2 数据源...
+[ INFO ] [2020-12-04 10:53:07] com.warm.common.DataSourceSwitchAspect [56] - 根据注解来切换数据源,注解值为:db1
+[ DEBUG] [2020-12-04 10:53:07] com.warm.system.mapper.OrderMapper.selectList [159] - ==>  Preparing: SELECT id AS id,sellerid,buyerid,snapshotid,`state`,createtime,updatetime FROM t_order 
+[ DEBUG] [2020-12-04 10:53:07] com.warm.system.mapper.OrderMapper.selectList [159] - ==> Parameters: 
+[ INFO ] [2020-12-04 10:53:15] org.springframework.web.context.support.GenericWebApplicationContext [984] - Closing org.springframework.web.context.support.GenericWebApplicationContext@16150369: startup date [Fri Dec 04 10:53:01 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 11:05:08] com.warm.entity.DataTest [48] - Starting DataTest on calu-3.local with PID 82587 (started by apple in /Users/apple/calu/work/58city/demo)
+[ DEBUG] [2020-12-04 11:05:08] com.warm.entity.DataTest [51] - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+[ INFO ] [2020-12-04 11:05:08] com.warm.entity.DataTest [597] - The following profiles are active: dev
+[ INFO ] [2020-12-04 11:05:08] org.springframework.web.context.support.GenericWebApplicationContext [583] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@16150369: startup date [Fri Dec 04 11:05:08 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 11:05:13] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@16150369: startup date [Fri Dec 04 11:05:08 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 11:05:13] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/order],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.Order>> com.warm.system.controller.IndexController.getOrderList()
+[ INFO ] [2020-12-04 11:05:13] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/user],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.User>> com.warm.system.controller.IndexController.getUserList()
+[ INFO ] [2020-12-04 11:05:13] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice()
+[ INFO ] [2020-12-04 11:05:13] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/price2],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.math.BigDecimal> com.warm.system.controller.IndexController.getPrice2()
+[ INFO ] [2020-12-04 11:05:13] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[ INFO ] [2020-12-04 11:05:13] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[ INFO ] [2020-12-04 11:05:13] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 11:05:13] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 11:05:13] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 11:05:14] com.warm.entity.DataTest [57] - Started DataTest in 6.809 seconds (JVM running for 7.632)
+[ INFO ] [2020-12-04 11:05:14] com.warm.common.DataSourceSwitchAspect [35] - 切换到db1 数据源...
+[ INFO ] [2020-12-04 11:05:14] com.warm.common.DataSourceSwitchAspect [56] - 根据注解来切换数据源,注解值为:db2
+[ DEBUG] [2020-12-04 11:05:14] com.warm.system.mapper.UserMapper.selectList [159] - ==>  Preparing: SELECT uid AS `uid`,username,`password`,email,phone,createtime,updatetime FROM userlogin 
+[ DEBUG] [2020-12-04 11:05:14] com.warm.system.mapper.UserMapper.selectList [159] - ==> Parameters: 
+[ DEBUG] [2020-12-04 11:05:14] com.warm.system.mapper.UserMapper.selectList [159] - <==      Total: 1
+[ INFO ] [2020-12-04 11:05:14] com.warm.common.DataSourceSwitchAspect [41] - 切换到db2 数据源...
+[ INFO ] [2020-12-04 11:05:14] com.warm.common.DataSourceSwitchAspect [56] - 根据注解来切换数据源,注解值为:db1
+[ DEBUG] [2020-12-04 11:05:14] com.warm.system.mapper.OrderMapper.getSellerIdByOrderId [159] - ==>  Preparing: SELECT sellerid from order where id =? 
+[ DEBUG] [2020-12-04 11:05:14] com.warm.system.mapper.OrderMapper.getSellerIdByOrderId [159] - ==> Parameters: 743(Integer)
+[ INFO ] [2020-12-04 11:05:14] org.springframework.web.context.support.GenericWebApplicationContext [984] - Closing org.springframework.web.context.support.GenericWebApplicationContext@16150369: startup date [Fri Dec 04 11:05:08 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 12:17:09] com.warm.entity.DataTest [48] - Starting DataTest on calu-3.local with PID 91735 (started by apple in /Users/apple/calu/work/58city/demo)
+[ DEBUG] [2020-12-04 12:17:09] com.warm.entity.DataTest [51] - Running with Spring Boot v1.5.10.RELEASE, Spring v4.3.14.RELEASE
+[ INFO ] [2020-12-04 12:17:09] com.warm.entity.DataTest [597] - The following profiles are active: dev
+[ INFO ] [2020-12-04 12:17:09] org.springframework.web.context.support.GenericWebApplicationContext [583] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 12:17:09 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 12:17:16] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 12:17:09 CST 2020]; root of context hierarchy
+[ INFO ] [2020-12-04 12:17:17] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/user],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.User>> com.warm.system.controller.IndexController.getUserList()
+[ INFO ] [2020-12-04 12:17:17] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/order],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.warm.system.entity.Order>> com.warm.system.controller.IndexController.getOrderList()
+[ INFO ] [2020-12-04 12:17:17] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[ INFO ] [2020-12-04 12:17:17] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping [543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[ INFO ] [2020-12-04 12:17:17] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 12:17:17] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 12:17:17] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [362] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[ INFO ] [2020-12-04 12:17:18] com.warm.entity.DataTest [57] - Started DataTest in 10.373 seconds (JVM running for 13.077)
+[ INFO ] [2020-12-04 12:17:18] com.warm.common.DataSourceSwitchAspect [35] - 切换到db1 数据源...
+[ INFO ] [2020-12-04 12:17:18] com.warm.common.DataSourceSwitchAspect [56] - 根据注解来切换数据源,注解值为:db2
+[ DEBUG] [2020-12-04 12:17:18] com.warm.system.mapper.UserMapper.selectList [159] - ==>  Preparing: SELECT uid AS `uid`,username,`password`,email,phone,createtime,updatetime FROM userlogin 
+[ DEBUG] [2020-12-04 12:17:18] com.warm.system.mapper.UserMapper.selectList [159] - ==> Parameters: 
+[ DEBUG] [2020-12-04 12:17:18] com.warm.system.mapper.UserMapper.selectList [159] - <==      Total: 1
+[ INFO ] [2020-12-04 12:17:18] com.warm.common.DataSourceSwitchAspect [41] - 切换到db2 数据源...
+[ INFO ] [2020-12-04 12:17:18] com.warm.common.DataSourceSwitchAspect [56] - 根据注解来切换数据源,注解值为:db1
+[ DEBUG] [2020-12-04 12:17:18] com.warm.system.mapper.OrderMapper.getSellerIdByOrderId [159] - ==>  Preparing: SELECT sellerid from t_order where id =? 
+[ DEBUG] [2020-12-04 12:17:18] com.warm.system.mapper.OrderMapper.getSellerIdByOrderId [159] - ==> Parameters: 743(Integer)
+[ DEBUG] [2020-12-04 12:17:18] com.warm.system.mapper.OrderMapper.getSellerIdByOrderId [159] - <==      Total: 1
+[ INFO ] [2020-12-04 12:17:18] org.springframework.web.context.support.GenericWebApplicationContext [984] - Closing org.springframework.web.context.support.GenericWebApplicationContext@7e242b4d: startup date [Fri Dec 04 12:17:09 CST 2020]; root of context hierarchy
