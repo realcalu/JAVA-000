@@ -1,7 +1,6 @@
 package com.example.shardingsphere.demo.mapper;
 
 import com.example.shardingsphere.demo.entity.Order;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,7 +13,7 @@ import java.util.List;
  **/
 @Repository
 public interface OrderMapper {
-    int intsert(@Param("orderid") long orderid, @Param("userid") long userid);
+    int intsert(Order order);
     int deleteAll();
     List<Order> queryAll();
 

@@ -21,8 +21,8 @@ public class OrderService {
     public List<Order> query(){
         return mapper.queryAll();
     }
-    public int insert(long orderid,long userid){
-        return mapper.intsert(orderid,userid);
+    public int insert(Order order){
+        return mapper.intsert(order);
     }
 
     public int deleteAll(){

@@ -9,12 +9,11 @@ import lombok.Data;
  * @Date
  **/
 @Data
-public class Order implements Comparable<Order> {
-    private Long order_id;
-    private Long user_id;
-
-    @Override
-    public int compareTo(Order o) {
-        return o.getOrder_id().compareTo(this.order_id);
-    }
+public class Order{
+    private long orderid;
+    private long buyerid;
+    private long snapshotid;
+    private int state;
+    private long createtime;
+    private long updatetime;
 }

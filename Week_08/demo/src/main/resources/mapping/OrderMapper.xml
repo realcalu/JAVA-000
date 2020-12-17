@@ -3,18 +3,23 @@
 <mapper namespace="com.example.shardingsphere.demo.mapper.OrderMapper">
 
     <resultMap id="BaseResultMap" type="com.example.shardingsphere.demo.entity.Order">
-        <result column="order_id" jdbcType="INTEGER" property="order_id" />
-        <result column="user_id" jdbcType="VARCHAR" property="user_id" />
+        <result column="orderid" jdbcType="INTEGER" property="orderid" />
+        <result column="buyerid" jdbcType="INTEGER" property="buyerid" />
+        <result column="snapshotid" jdbcType="INTEGER" property="snapshotid" />
+        <result column="state" jdbcType="INTEGER" property="state" />
+        <result column="createtime" jdbcType="INTEGER" property="createtime" />
+        <result column="updatetime" jdbcType="INTEGER" property="updatetime" />
     </resultMap>
 
     <select id="queryAll" resultMap="BaseResultMap">
         select * from t_order
     </select>
 
-    <delete id="intsert" parameterType="com.example.shardingsphere.demo.entity.Order">
-        insert into t_order (order_id,user_id)
-        values (#{orderid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER})
-    </delete>
+    <insert id="intsert" parameterType="com.example.shardingsphere.demo.entity.Order">
+        insert into t_order (orderid,buyerid,snapshotid,state,createtime,updatetime)
+        values (#{orderid,jdbcType=INTEGER}, #{buyerid,jdbcType=INTEGER}, #{snapshotid,jdbcType=INTEGER},
+        #{state,jdbcType=INTEGER}, #{createtime,jdbcType=INTEGER}, #{updatetime,jdbcType=INTEGER})
+    </insert>
 
     <delete id="deleteAll">
         delete from t_order;

@@ -7,6 +7,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Date;
 import java.util.List;
 
 @SpringBootTest
@@ -26,7 +27,14 @@ class DemoApplicationTests {
 	@Test
 	void insert() {
 		for (int i = 1; i < 22; i++) {
-			int insert = orderService.insert(i, i%20);
+			Order order = new Order();
+			order.setOrderid(i);
+			order.setBuyerid(i%20);
+			order.setSnapshotid(i*10+2);
+			order.setCreatetime(new Date().getTime());
+			order.setUpdatetime(new Date().getTime());
+			order.setState(i/2);
+			int insert = orderService.insert(order);
 		}
 	}
 //	删除
