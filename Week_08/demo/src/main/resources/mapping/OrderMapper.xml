@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.shardingsphere.demo.mapper.OrderMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.shardingsphere.demo.entity.Order">
+        <result column="order_id" jdbcType="INTEGER" property="order_id" />
+        <result column="user_id" jdbcType="VARCHAR" property="user_id" />
+    </resultMap>
+
+    <select id="queryAll" resultMap="BaseResultMap">
+        select * from t_order
+    </select>
+
+    <delete id="intsert" parameterType="com.example.shardingsphere.demo.entity.Order">
+        insert into t_order (order_id,user_id)
+        values (#{orderid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER})
+    </delete>
+
+    <delete id="deleteAll">
+        delete from t_order;
+    </delete>
+</mapper>
+
