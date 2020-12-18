@@ -18,14 +18,16 @@ import java.util.List;
 public class OrderService {
     @Autowired
     OrderMapper mapper;
-    public List<Order> query(){
+
+    public List<Order> query() {
         return mapper.queryAll();
     }
-    public int insert(Order order){
+
+    public int insert(Order order) {
         return mapper.intsert(order);
     }
 
-    public int deleteAll(){
+    public int deleteAll() {
         return mapper.deleteAll();
     }
 

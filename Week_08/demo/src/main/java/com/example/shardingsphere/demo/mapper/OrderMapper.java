@@ -14,7 +14,9 @@ import java.util.List;
 @Repository
 public interface OrderMapper {
     int intsert(Order order);
+
     int deleteAll();
+
     List<Order> queryAll();
 
 
